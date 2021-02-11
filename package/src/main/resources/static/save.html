@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+</head>
+<body>
+<form>
+    <div class="form-group">
+        <label for="exampleInputEmail1">用户名</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">密码</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">重复密码</label>
+        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+    </div>
+    <input id="sub" class="btn-success form-control" type="button" value="注册">
+</form>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    $("#sub").click(function (){
+       var username =  $("#exampleInputEmail1").val()
+       var password = $("#exampleInputPassword1").val
+       var password2 = $("#exampleInputPassword2").val
+
+        //用户名是否为空
+        if(username.length == 0){
+            alert("用户名为空")
+            return;
+        }
+        //密码是否为空
+        if(password.length == 0){
+            alert("密码不能为空")
+            return;
+        }
+
+        if(password != password2){
+            alert("两次密码不一致")
+            return;
+        }
+
+
+        //封装数据，提交接口
+        var user ={
+            "username" : username,
+            "password" : password,
+        }
+
+        //转换为json
+        var userjson = JSON.stringify(user)
+
+        //提交给后端接口
+        $.post({
+            url: 'user/save',
+            data : userjson,
+            success:function (data){
+                alert(data)
+            }
+        })
+
+
+
+
+    })
+</script>

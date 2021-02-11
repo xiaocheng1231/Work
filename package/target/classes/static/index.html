@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <!--此处省略添加js-->
+</head>
+<body>
+<h1>这是首页！！！</h1>
+
+</body>
+<div class="container">
+    <table class="table-hover">
+        <tr>
+            <th>ID</th>
+            <th>用户名</th>
+            <th>密码</th>
+            <th>创建时间</th>
+            <th>操作</th>
+        </tr>
+        <tbody class="pool">
+<!--        <tr>-->
+<!--            <td>1</td>-->
+<!--            <td>lisi</td>-->
+<!--            <td>admin</td>-->
+<!--            <td>2021/02/1023:39</td>-->
+<!--            <td>正常</td>-->
+            <td>
+                <a href="#" class="btn btn-success">修改</a>
+                <a href="#" class="btn btn-danger">删除</a>
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+</div>
+</html>
+<!--连接js后省略的js代码
+    $(function(){
+        $.post({
+            url:'后端地址',
+            success:function(data) {
+                //取出每一个字段的内容
+                //data[0].username
+
+                var test = "<tr>\n" +
+                 <td>+i+</td>
+            <td>+data[0].username+</td>
+            <td>admin</td>
+            <td>2021/02/1023:39</td>
+            <td>正常</td>
+            <td>
+                <a href="\user/delById?id="+ date[i].id+ class="btn btn-success">修改</a>
+                <a href="#" class="btn btn-danger">删除</a>
+            </td>
+        </tr>
+
+        var obj = $(".pool");
+        obj.append(text);
+            }
+        })
+
+    });
+
+-->
